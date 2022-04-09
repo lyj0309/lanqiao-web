@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>布局切换</title>
+  <script type="text/javascript" src="./js/vue.js"></script>
+  <link rel="stylesheet" type="text/css" href="./css/index.css" />
+  <script src="./js/axios.min.js" type="text/javascript" charset="utf-8"></script>
+</head>
+
+<body>
+  <div id="app" v-cloak>
+    <!-- TODO：请在下面实现需求 -->
+    <div class="bar">
+      <a @click="switchtab(1)" class="grid-icon" :class="i==1?'active':''"></a>
+      <a @click="switchtab(2)" class="list-icon" :class="i==2?'active':''"></a>
+    </div>
+    <!--grid 示例代码，动态渲染时可删除-->
+    <ul v-if="i==1" class="grid" >
+      <li v-for="good in goodsList">
+        <a href="#/3814" target="_blank"> <img :src="good.image.large" /></a>
+      </li>
+    </ul>
+    <ul v-else class="list">
+      <li  v-for="good in goodsList">
+        <a href="#/3814" target="_blank"> <img :src="good.image.large" /></a>
+        <p>从零吃透 Vue.js 框架</p>
+      </li>
+    </ul>
+  </div>
+</body>
+
+</html>
+<script type="text/javascript">
+  var vm = new Vue({
+    el: "#app",
+    data: {
+      goodsList: [],
+      i:1
+    },
+    async mounted() {
+      const data = await axios.get("goodsList.json")
+      this.goodsList = data.data
+      console.log(data)
+      // TODO：补全代码实现需求
+    },
+    methods:{
+      switchtab(i){
+        this.i = i
+        console.log(i)
+      },
+    }
+  });
+</script>
