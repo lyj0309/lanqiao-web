@@ -45,3 +45,50 @@
 }
 
 /*TODO：请补充 CSS 代码*/
+#box:hover #item1 {
+  transform: rotate(-60deg);
+}
+
+#box:hover #item2 {
+  transform: rotate(-50deg);
+}
+
+#box:hover #item3 {
+  transform: rotate(-40deg);
+}
+
+#box:hover #item4 {
+  transform: rotate(-30deg);
+}
+
+#box:hover #item5 {
+  transform: rotate(-20deg);
+}
+
+#box:hover #item6 {
+  transform: rotate(-10deg);
+}
+
+#box:hover #item7 {
+  transform: rotate(10deg);
+}
+
+#box:hover #item8 {
+  transform: rotate(20deg);
+}
+
+#box:hover #item9 {
+  transform: rotate(30deg);
+}
+
+#box:hover #item10 {
+  transform: rotate(40deg);
+}
+
+#box:hover #item11 {
+  transform: rotate(50deg);
+}
+
+#box:hover #item12 {
+  transform: rotate(60deg);
+}
